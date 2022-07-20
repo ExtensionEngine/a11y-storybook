@@ -5,9 +5,9 @@ module.exports = {
   ],
   "addons": [
     "@socheatsok78/storybook-addon-vuetify",
-    "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-links",
   ],
   "framework": "@storybook/vue",
   "core": {

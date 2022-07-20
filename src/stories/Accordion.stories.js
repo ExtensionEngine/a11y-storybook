@@ -20,9 +20,17 @@ const VanillaTemplate = () => ({
 });
 
 export const VanillaImplementation = VanillaTemplate.bind({});
+VanillaImplementation.play = async () => {
+  const firstAccordionHeader = document.querySelector('button.accordion-trigger');
+  firstAccordionHeader.focus();
+};
 
 const VuetifyTemplate = () => ({
   components: { VuetifyAccordion },
   template: '<vuetify-accordion/>',
 });
 export const Vuetify2Implementation = VuetifyTemplate.bind({});
+Vuetify2Implementation.play = async () => {
+  const firstAccordionHeader = document.querySelector('button.v-expansion-panel-header');
+  firstAccordionHeader.focus();
+};
