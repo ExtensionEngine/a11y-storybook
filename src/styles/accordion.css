@@ -51,6 +51,10 @@
   border-radius: 5px 5px 0 0;
 }
 
+/*
+  Source code originally applied this to last child instead of the penultimate child,
+  causing a visual issue in case accordion is focused.
+ */
 .accordion > *:nth-last-child(2) .accordion-trigger,
 .accordion > *:nth-last-child(2) {
   border-radius: 0 0 5px 5px;
