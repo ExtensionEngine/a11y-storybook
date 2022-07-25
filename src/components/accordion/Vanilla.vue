@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1 class="mb-3 teal--text">Vanilla Accordion</h1>
-    <warning-disclaimer/>
     <h2 class="mb-2 teal--text">Example</h2>
     <!-- Vanilla template -->
     <div id="accordionGroup" class="accordion">
@@ -117,8 +116,6 @@
 </template>
 
 <script>
-import WarningDisclaimer from '../WarningDisclaimer.vue';
-
 /*
  *   This content is licensed according to the W3C Software License at
  *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
@@ -176,9 +173,6 @@ class Accordion {
 
 export default {
   name: 'vanilla-accordion',
-  components: {
-    WarningDisclaimer,
-  },
   mounted() {
     // Todo: Vanilla -> Vue.js
     // Consider using Vue.js ref instead of document.querySelectorAll

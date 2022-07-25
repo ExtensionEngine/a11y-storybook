@@ -17,6 +17,7 @@
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
     "@socheatsok78/storybook-addon-vuetify": "^0.1.9",
+    "@storybook/addon-a11y": "^6.5.9",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-docs": "^6.5.0-rc.1",
     "@storybook/addon-essentials": "^6.5.9",
