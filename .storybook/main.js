@@ -5,6 +5,7 @@ module.exports = {
   ],
   "addons": [
     "@socheatsok78/storybook-addon-vuetify",
+    '@storybook/addon-docs',
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-links",

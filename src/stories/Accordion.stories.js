@@ -1,18 +1,16 @@
-import AboutAccordion from '../components/accordion/About.vue';
+import AccordionDocumentation from '../docs/AccordionDocumentation.mdx';
 import VanillaAccordion from '../components/accordion/Vanilla.vue';
 import VuetifyAccordion from '../components/accordion/Vuetify.vue';
 
 export default {
-  title: 'Accessible Accordion',
+  title: 'W3C WAI APG/Components/Accordion',
   argTypes: {},
+  parameters: {
+    docs: {
+      page: AccordionDocumentation,
+    },
+  },
 };
-
-const AboutTemplate = () => ({
-  components: { AboutAccordion },
-  template: '<about-accordion/>',
-});
-
-export const About = AboutTemplate.bind({});
 
 const VanillaTemplate = () => ({
   components: { VanillaAccordion },

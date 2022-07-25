@@ -1,0 +1,201 @@
+<div class="v-application d-block">
+  <div class="v-application--wrap">
+    <h1 class="mb-3 teal--text">Accordion (Sections With Show/Hide Functionality)</h1>
+    <h2 class="mb-3 teal--text">About this pattern</h2>
+    <div class="mb-5">
+      <div>
+        An accordion is a vertically stacked set of interactive headings that each contain a title, content snippet, or thumbnail representing a section of content.
+        The headings function as controls that enable users to reveal or hide their associated sections of content.
+        Accordions are commonly used to reduce the need to scroll when presenting multiple sections of content on a single page.
+      </div>
+      <div>Terms for understanding accordions include:</div>
+      <dl class="mb-2">
+        <dt className="font-weight-bold">Accordion Header:</dt>
+        <dd className="ml-8 mb-1">
+          Label for or thumbnail representing a section of content that also serves as a control for showing, and in some implementations, hiding the section of content.
+        </dd>
+        <dt className="font-weight-bold">Accordion Panel:</dt>
+        <dd className="ml-8 mb-1">
+          Section of content associated with an accordion header.
+          In some accordions, there are additional elements that are always visible adjacent to the accordion header.
+          For instance, a menubutton may accompany each accordion header to provide access to actions that apply to that section.
+          And, in some cases, a snippet of the hidden content may also be visually persistent.
+        </dd>
+      </dl>
+    </div>
+    <h2 class="mb-3 teal--text">Keyboard Support</h2>
+    <div class="v-data-table theme--light">
+      <div class="v-data-table__wrapper">
+        <table class="mb-5">
+          <thead>
+            <tr className="white">
+              <th className="text-left">Key</th>
+              <th className="text-left">Required</th>
+              <th className="text-left">Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="white">
+              <td>
+                <code>Enter</code> or <code>Space</code>
+              </td>
+              <td>Yes</td>
+              <td>
+                <ul>
+                  <li>
+                    When focus is on the accordion header for a collapsed panel, expands the associated panel.
+                    If the implementation allows only one panel to be expanded, and if another panel is expanded, collapses that panel.
+                  </li>
+                  <li>
+                    When focus is on the accordion header for an expanded panel, collapses the panel if the implementation supports collapsing.
+                    Some implementations require one panel to be expanded at all times and allow only one panel to be expanded; so, they do not support a collapse function.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="white">
+              <td>
+                <code>Tab</code>
+              </td>
+              <td>Yes</td>
+              <td>
+                Moves focus to the next focusable element;
+                all focusable elements in the accordion are included in the page <code>Tab</code> sequence.
+              </td>
+            </tr>
+            <tr className="white">
+              <td>
+                <code>Shift + Tab</code>
+              </td>
+              <td>Yes</td>
+              <td>
+                Moves focus to the previous focusable element;
+                all focusable elements in the accordion are included in the page <code>Tab</code> sequence.
+              </td>
+            </tr>
+            <tr className="white">
+              <td>
+                <code>Down Arrow</code>
+              </td>
+              <td>No</td>
+              <td>
+                If focus is on an accordion header, moves focus to the next accordion header.
+                If focus is on the last accordion header, either does nothing or moves focus to the first accordion header.
+              </td>
+            </tr>
+            <tr className="white">
+              <td>
+                <code>Up Arrow</code>
+              </td>
+              <td>No</td>
+              <td>
+                If focus is on an accordion header, moves focus to the previous accordion header.
+                If focus is on the first accordion header, either does nothing or moves focus to the last accordion header.
+              </td>
+            </tr>
+            <tr className="white">
+              <td>
+                <code>Home</code>
+              </td>
+              <td>No</td>
+              <td>When focus is on an accordion header, moves focus to the first accordion header.</td>
+            </tr>
+            <tr className="white">
+              <td>
+                <code>End</code>
+              </td>
+              <td>No</td>
+              <td>When focus is on an accordion header, moves focus to the last accordion header.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <h2 class="mb-3 teal--text">Role, Property, State, and Tabindex Attributes</h2>
+    <div>
+      The following implementation notes are based on <a class="blue--text text--darken-2" href="https://www.w3.org/WAI/standards-guidelines/aria/" target="blank">WAI-ARIA Guidelines</a>.
+    </div>
+    <div class="v-data-table theme--light">
+      <div class="v-data-table__wrapper">
+        <table class="mb-5">
+          <thead>
+            <tr className="white">
+              <th className="text-left">Role</th>
+              <th className="text-left">Attribute</th>
+              <th className="text-left">Element</th>
+              <th className="text-left">Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="white">
+              <td></td>
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>h3</code>
+              </th>
+              <td>
+                <ul>
+                  <li>Element that serves as an accordion header.</li>
+                  <li>Each accordion header element contains a button that controls the visibility of its content panel.</li>
+                  <li>The example uses heading level 3 so it fits correctly within the outline of the page; the example is contained in a section titled with a level 2 heading.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-expanded="true"</code>
+              </th>
+              <td>
+                <code>button</code>
+              </td>
+              <td>Set to true when the Accordion panel is expanded, otherwise set to false.</td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-controls="ID"</code>
+              </th>
+              <td>
+                <code>button</code>
+              </td>
+              <td>Points to the ID of the panel which the header controls.</td>
+            </tr>
+            <tr className="white">
+              <th className="text-body-2" scope="row">
+                <code>region</code>
+              </th>
+              <td></td>
+              <td>
+                <code>div</code>
+              </td>
+              <td>Creates a landmark region that contains the currently expanded accordion panel.</td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-labelledby="IDREF"</code>
+              </th>
+              <td>
+                <code>div</code>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    Defines the accessible name for the <code>region</code> element.
+                  </li>
+                  <li>
+                    References the accordion header button that expands and collapses the <code>region.</code>
+                  </li>
+                  <li>
+                    <code>region</code> elements are required to have an accessible name to be identified as a landmark.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
