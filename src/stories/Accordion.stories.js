@@ -71,12 +71,34 @@ const VuetifyTemplate = () => ({
       <h1 class="mb-3 teal--text">Vuetify 2 Accordion</h1>
       <h2 class="mb-2 teal--text">Example</h2>
 
-      <vuetify-accordion/>
+      <vuetify-accordion class="mb-3" />
 
-      <p class="mt-5">
-        Source:
-        <a href="https://vuetifyjs.com/en/components/expansion-panels/" target="_blank">Vuetify Expansion panels</a>
-      </p>
+      <h2 class="mb-2 teal--text">Specification</h2>
+
+      <v-simple-table>
+        <template v-slot:default>
+          <tbody>
+            <tr>
+              <th>Source</th>
+              <td>
+                <a href="https://vuetifyjs.com/en/components/expansion-panels/" target="blank">Vuetify's Expansion Panel</a>
+              </td>
+            </tr>
+            <tr>
+              <th>Open a11y issues</th>
+              <td>
+                <ul>
+                  <li>
+                    <a href="https://github.com/vuetifyjs/vuetify/issues/15514" target="blank">
+                      Elements must only use allowed ARIA attributes
+                    </a>
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </template>
+      </v-simple-table>
     </div>
   `,
 });
