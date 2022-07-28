@@ -1,10 +1,10 @@
 import AccordionDocumentation from '../docs/AccordionDocumentation.mdx';
 import VanillaAccordion from '../components/accordion/Vanilla.vue';
+import { VanillaAccordionTemplate, Vuetify2AccordionTemplate } from './templates/Accordion.js';
 import VuetifyAccordion from '../components/accordion/Vuetify.vue';
 
 export default {
   title: 'W3C WAI APG/Components/Accordion',
-  argTypes: {},
   parameters: {
     docs: {
       page: AccordionDocumentation,
@@ -14,96 +14,138 @@ export default {
 
 const VanillaTemplate = () => ({
   components: { VanillaAccordion },
-  template: `
-    <div>
-      <h1 class="mb-3 teal--text">Vanilla Accordion</h1>
-
-      <v-alert border="bottom" colored-border type="warning" elevation="2">
-        <p>
-          The code in this example is not intended for production environments.
-          Before using it for any purpose, read this to understand why.
-        </p>
-        <p>This is an illustrative example of one way of using ARIA that conforms with the ARIA specification.</p>
-
-        <ul>
-          <li>
-            There may be support gaps in some
-            <a href="https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/#browser_and_AT_support" target="_blank">browser and assistive technology combinations</a>,
-            especially for
-            <a href="https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/#mobile_and_touch_support" target="_blank">mobile/touch devices</a>.
-            Testing code based on this example with assistive technologies is essential before considering use in production systems.
-          </li>
-          <li>
-            The
-            <a href="https://aria-at.w3.org" target="_blank">ARIA and Assistive Technologies Project</a>
-            is developing measurements of assistive technology support for APG examples.
-          </li>
-          <li>
-            Robust accessibility can be further optimized by choosing implementation patterns that
-            <a href="https://www.w3.org/TR/using-aria/#rule1" target="_blank">maximize use of semantic HTML</a>
-            and heeding the warning that
-            <a href="https://www.w3.org/WAI/ARIA/apg/practices/read-me-first/#no_aria_better_bad_aria" target="_blank">No ARIA is better than Bad ARIA</a>.
-          </li>
-        </ul>
-        <p>
-          Source:
-          <a href="https://www.w3.org/WAI/ARIA/apg/example-index/accordion/accordion.html" target="_blank">ARIA Authoring Practices Guide (APG)</a>
-        </p>
-      </v-alert>
-
-      <h2 class="mb-2 teal--text">Example</h2>
-
-      <vanilla-accordion />
-    </div>
-  `,
+  template: VanillaAccordionTemplate,
 });
-
 export const VanillaImplementation = VanillaTemplate.bind({});
-VanillaImplementation.play = async () => {
+VanillaImplementation.play = () => {
   const firstAccordionHeader = document.querySelector('button.accordion-trigger');
   firstAccordionHeader.focus();
 };
 
-const VuetifyTemplate = () => ({
+const VuetifyTemplate = (_, { argTypes }) => ({
   components: { VuetifyAccordion },
-  template: `
-    <div>
-      <h1 class="mb-3 teal--text">Vuetify 2 Accordion</h1>
-      <h2 class="mb-2 teal--text">Example</h2>
-
-      <vuetify-accordion class="mb-3" />
-
-      <h2 class="mb-2 teal--text">Specification</h2>
-
-      <v-simple-table>
-        <template v-slot:default>
-          <tbody>
-            <tr>
-              <th>Source</th>
-              <td>
-                <a href="https://vuetifyjs.com/en/components/expansion-panels/" target="blank">Vuetify's Expansion Panel</a>
-              </td>
-            </tr>
-            <tr>
-              <th>Open a11y issues</th>
-              <td>
-                <ul>
-                  <li>
-                    <a href="https://github.com/vuetifyjs/vuetify/issues/15514" target="blank">
-                      Elements must only use allowed ARIA attributes
-                    </a>
-                  </li>
-                </ul>
-              </td>
-            </tr>
-          </tbody>
-        </template>
-      </v-simple-table>
-    </div>
-  `,
+  props: Object.keys(argTypes),
+  template: Vuetify2AccordionTemplate,
 });
 export const Vuetify2Implementation = VuetifyTemplate.bind({});
-Vuetify2Implementation.play = async () => {
+Vuetify2Implementation.args = {
+  accordion: false,
+  activeClass: 'v-item--active',
+  dark: false,
+  disabled: false,
+  flat: false,
+  focusable: false,
+  hover: false,
+  inset: false,
+  mandatory: false,
+  max: undefined,
+  multiple: false,
+  popout: false,
+  readonly: false,
+  tag: 'div',
+  tile: false,
+  value: undefined,
+};
+Vuetify2Implementation.argTypes = {
+  accordion: {
+    description: 'Removes the margin around open panels.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  activeClass: {
+    description: 'The `active-class` applied to children when they are activated.',
+    name:'active-class',
+    table: {
+      defaultValue: { summary: 'v-item--active' },
+    }
+  },
+  dark: {
+    description: 'Applies the dark theme variant to the component.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  disabled: {
+    description: 'Disables the entire expansion-panel.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  flat: {
+    description: 'Removes the expansion-panel’s elevation and borders.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  focusable: {
+    description: 'Makes the expansion-panel headers focusable.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  hover: {
+    description: 'Applies a background-color shift on hover to expansion panel headers.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  inset: {
+    description: 'Makes the expansion-panel open with a inset style.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  mandatory: {
+    description: 'Forces a value to always be selected (if available).',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  max: {
+    description: 'Sets a maximum number of selections that can be made.',
+    table: {
+      defaultValue: { summary: 'undefined' },
+    },
+  },
+  multiple: {
+    description: 'Allow multiple selections. The `value` prop must be an `array`.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  popout: {
+    description: 'Makes the expansion-panel open with an popout style.',
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  readonly: {
+    description: "Makes the entire expansion-panel read only.",
+    table: {
+      defaultValue: { summary: 'false' },
+    }
+  },
+  tag: {
+    description: 'Specify a custom tag used on the root element.',
+    table: {
+      defaultValue: { summary: 'div' }
+    }
+  },
+  tile: {
+    description: 'Removes the border-radius.',
+    table: {
+      defaultValue: { summary: 'false' }
+    }
+  },
+  value: {
+    description: 'Controls the opened/closed state of content in the expansion-panel. Corresponds to a zero-based index of the currently opened content. If the `multiple` prop is used then it is an array of numbers where each entry corresponds to the index of the opened content. The index order is not relevant.',
+    table: {
+      defaultValue: { summary: 'undefined' }
+    }
+  }
+};
+Vuetify2Implementation.play = () => {
   const firstAccordionHeader = document.querySelector('button.v-expansion-panel-header');
   firstAccordionHeader.focus();
 };

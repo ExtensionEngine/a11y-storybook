@@ -3,6 +3,7 @@ import { withThemeProvider, withVuetify } from '@socheatsok78/storybook-addon-vu
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {
+    expanded: true,
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
