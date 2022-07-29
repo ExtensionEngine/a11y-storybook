@@ -1,4 +1,11 @@
+import Vue from 'vue'
 import { withThemeProvider, withVuetify } from '@socheatsok78/storybook-addon-vuetify/dist/decorators'
+
+/**
+ * Workaround to prevent console errors in case $emit is used to emit events upstream.
+ * See: https://github.com/storybookjs/storybook/issues/14933
+ */
+Vue.prototype.toJSON = () => {};
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
