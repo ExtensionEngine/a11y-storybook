@@ -1,0 +1,7 @@
+export const BADGES = {
+  CUSTOMIZABLE: 'CUSTOMIZABLE',
+  ISSUES: 'ISSUES',
+  MOBILE: 'MOBILE',
+  STABLE: 'STABLE',
+  W3C: 'W3C',
+};

@@ -1,5 +1,6 @@
 import AccordionDocumentation from '../docs/AccordionDocumentation.mdx';
-import { action } from '@storybook/addon-actions'
+import { action } from '@storybook/addon-actions';
+import { BADGES } from '../../.storybook/constants';
 import VanillaAccordion from '../components/accordion/Vanilla.vue';
 import { VanillaAccordionTemplate, Vuetify2AccordionTemplate } from './templates/Accordion.js';
 import VuetifyAccordion from '../components/accordion/Vuetify.vue';
@@ -18,6 +19,9 @@ const VanillaTemplate = () => ({
   template: VanillaAccordionTemplate,
 });
 export const VanillaImplementation = VanillaTemplate.bind({});
+VanillaImplementation.parameters = {
+  badges: [BADGES.W3C],
+};
 VanillaImplementation.play = () => {
   const firstAccordionHeader = document.querySelector('button.accordion-trigger');
   firstAccordionHeader.focus();
@@ -151,6 +155,9 @@ Vuetify2Implementation.argTypes = {
       defaultValue: { summary: 'undefined' }
     }
   },
+};
+Vuetify2Implementation.parameters = {
+  badges: [BADGES.ISSUES, BADGES.STABLE, BADGES.MOBILE, BADGES.CUSTOMIZABLE],
 };
 Vuetify2Implementation.play = () => {
   const firstAccordionHeader = document.querySelector('button.v-expansion-panel-header');

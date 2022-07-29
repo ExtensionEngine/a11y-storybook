@@ -1,17 +1,18 @@
 module.exports = {
-  "stories": [
-    "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-  ],
-  "addons": [
-    "@socheatsok78/storybook-addon-vuetify",
+  addons: [
+    '@geometricpanda/storybook-addon-badges',
+    '@socheatsok78/storybook-addon-vuetify',
     '@storybook/addon-a11y',
     '@storybook/addon-docs',
-    "@storybook/addon-essentials",
-    "@storybook/addon-links",
+    '@storybook/addon-essentials',
+    '@storybook/addon-links',
   ],
-  "framework": "@storybook/vue",
-  "core": {
-    "builder": "@storybook/builder-webpack5"
-  }
+  core: {
+    builder: '@storybook/builder-webpack5'
+  },
+  framework: '@storybook/vue',
+  stories: [
+    '../src/**/*.stories.mdx',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+  ],
 }
