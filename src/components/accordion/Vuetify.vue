@@ -1,7 +1,11 @@
 <template>
   <v-expansion-panels v-bind="$props">
-    <v-expansion-panel v-for="(item,i) in 5" :key="i">
-      <v-expansion-panel-header>
+    <v-expansion-panel
+      v-for="(item,i) in 5" :key="i"
+      @change="event => $emit('panelChange', event)"
+      @click="event => $emit('panelClick', event)"
+    >
+      <v-expansion-panel-header @click="event => $emit('panelHeaderClick', event)">
         <h3>Item</h3>
       </v-expansion-panel-header>
       <v-expansion-panel-content>

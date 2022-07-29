@@ -1,4 +1,5 @@
 import AccordionDocumentation from '../docs/AccordionDocumentation.mdx';
+import { action } from '@storybook/addon-actions'
 import VanillaAccordion from '../components/accordion/Vanilla.vue';
 import { VanillaAccordionTemplate, Vuetify2AccordionTemplate } from './templates/Accordion.js';
 import VuetifyAccordion from '../components/accordion/Vuetify.vue';
@@ -24,6 +25,11 @@ VanillaImplementation.play = () => {
 
 const VuetifyTemplate = (_, { argTypes }) => ({
   components: { VuetifyAccordion },
+  methods: {
+    onPanelChange: action('Vuetify > Expansion Panel > change'),
+    onPanelClick: action('Vuetify > Expansion Panel > click'),
+    onPanelHeaderClick: action('Vuetify > Expansion Panel Header > click'),
+  },
   props: Object.keys(argTypes),
   template: Vuetify2AccordionTemplate,
 });
@@ -44,9 +50,10 @@ Vuetify2Implementation.args = {
   readonly: false,
   tag: 'div',
   tile: false,
-  value: undefined,
+  value: [],
 };
 Vuetify2Implementation.argTypes = {
+  /* Controls */
   accordion: {
     description: 'Removes the margin around open panels.',
     table: {
@@ -143,7 +150,7 @@ Vuetify2Implementation.argTypes = {
     table: {
       defaultValue: { summary: 'undefined' }
     }
-  }
+  },
 };
 Vuetify2Implementation.play = () => {
   const firstAccordionHeader = document.querySelector('button.v-expansion-panel-header');
