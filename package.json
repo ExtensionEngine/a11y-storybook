@@ -9,6 +9,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "overrides": {
+    "webpack": "^5"
+  },
   "dependencies": {
     "core-js": "^3.8.3",
     "vue": "^2.6.14"
