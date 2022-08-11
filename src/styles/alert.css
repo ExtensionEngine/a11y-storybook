@@ -1,0 +1,24 @@
+.alert-story [role="alert"] {
+  padding: 10px;
+  border: 2px solid hsl(206deg 74% 54%);
+  border-radius: 4px;
+  background: hsl(206deg 74% 90%);
+}
+
+.alert-story [role="alert"]:empty {
+  display: none;
+}
+
+/*
+The following styles are there to override Vuetify styles
+applied to the button due to Vuetify's default styles.
+*/
+
+.alert-story button[type=button] {
+  background-color: buttonface;
+  border-style: outset;
+  font: button;
+  padding: 1px 6px;
+}
+
+

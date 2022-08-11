@@ -1,0 +1,92 @@
+<div class="v-application d-block">
+  <div class="v-application--wrap">
+    <h1 class="mb-3 teal--text">Alert</h1>
+    <h2 class="mb-3 teal--text">About this pattern</h2>
+    <div class="mb-5">
+      An <a href="https://w3c.github.io/aria/#alert" target="blank">alert</a> is an element that displays a brief, important message in a way that attracts the user's attention without interrupting the user's task.
+      Dynamically rendered alerts are automatically announced by most screen readers, and in some operating systems, they may trigger an alert sound.
+      It is important to note that, at this time, screen readers do not inform users of alerts that are present on the page before page load completes.
+    </div>
+    <div class="mb-5">
+      Because alerts are intended to provide important and potentially time-sensitive information without interfering with the user's ability to continue working, it is crucial they do not affect keyboard focus.
+      The <a href="https://www.w3.org/WAI/ARIA/apg/patterns/alertdialog/" target="blank">alert dialog</a> is designed for situations where interrupting work flow is necessary.
+    </div>
+    <div class="mb-5">
+      It is also important to avoid designing alerts that disappear automatically.
+      An alert that disappears too quickly can lead to failure to <a href="https://www.w3.org/TR/UNDERSTANDING-WCAG20/time-limits-no-exceptions.html" target="blank">meet WCAG 2.0 success criterion 2.2.3</a>.
+      Another critical design consideration is the frequency of interruption caused by alerts.
+      Frequent interruptions inhibit usability for people with visual and cognitive disabilities, which makes meeting the requirements of WCAG 2.0 success criterion 2.2.4 more difficult.
+    </div>
+    <h2 class="mb-3 teal--text">Keyboard Support</h2>
+    <div class="mb-5">No keyboard interaction needed.</div>
+    <h2 class="mb-3 teal--text">Role, Property, State, and Tabindex Attributes</h2>
+    <div>
+      The following implementation notes are based on <a class="blue--text text--darken-2" href="https://www.w3.org/WAI/standards-guidelines/aria/" target="blank">
+        WAI-ARIA Guidelines</a>.
+    </div>
+    <div class="v-data-table theme--light">
+      <div class="v-data-table__wrapper">
+        <table class="mb-5">
+          <thead>
+            <tr className="white">
+              <th className="text-left">Role</th>
+              <th className="text-left">Attribute</th>
+              <th className="text-left">Element</th>
+              <th className="text-left">Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="white">
+              <th className="text-body-2" scope="row">
+                <code>alert</code>
+              </th>
+              <td></td>
+              <td>
+                <code>div</code>
+              </td>
+              <td>Identifies this element at the container where alert content will be added or updated.</td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-live="assertive"</code>
+              </th>
+              <td>
+                Implicit on <code>div</code>
+              </td>
+              <td>
+                <ul>
+                  <li>This does not have to be declared in the code because it is implicit in the alert role.</li>
+                  <li>
+                    Tells assistive technologies to interrupt other processes to provide users with immediate notification of relevant alert container changes.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-atomic="true"</code>
+              </th>
+              <td>
+                Implicit on <code>div</code>
+              </td>
+              <td>
+                <ul>
+                  <li>This does not have to be declared in the code because it is implicit in the alert role.</li>
+                  <li>
+                    Tells assistive technologies to use the entire content of the alert element as the alert message even if only a portion of it has changed.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      Read more about <a class="blue--text text--darken-2" href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/#wai-aria-roles-states-and-properties" target="blank">
+        WAI-ARIA Roles, States, and Properties</a>.
+    </div>
+  </div>
+</div>
