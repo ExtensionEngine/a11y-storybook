@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-btn @click="$refs.alert.toggle()">Trigger Alert</v-btn>
+    <v-btn @click="$refs.alert.toggle()">Toggle Alert</v-btn>
     <v-alert
       ref="alert"
       v-bind="$props"
