@@ -114,6 +114,7 @@ Vuetify2Implementation.argTypes = {
     }
   },
   max: {
+    control: { type: 'number', min: 1 },
     description: 'Sets a maximum number of selections that can be made.',
     table: {
       defaultValue: { summary: 'undefined' },

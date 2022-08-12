@@ -2,6 +2,7 @@
   <v-expansion-panels v-bind="$props">
     <v-expansion-panel
       v-for="(item,i) in 5" :key="i"
+      :active-class="activeClass"
       @change="event => $emit('panelChange', event)"
       @click="event => $emit('panelClick', event)"
     >
@@ -36,6 +37,6 @@ export default {
     tag: { type: String, default: 'div' },
     tile: { type: Boolean, default: false },
     value: { type: [Array, Number], default: undefined },
-  },
+  }
 };
 </script>
