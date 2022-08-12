@@ -16,6 +16,10 @@ export const parameters = {
         borderColor: '#D50000',
         color: '#BF360C',
       },
+      tooltip: {
+        title: 'Customizable component',
+        desc: 'This is a component with an API that allows you to customize its appearance.',
+      }
     },
     ISSUES: {
       styles: {
@@ -23,6 +27,10 @@ export const parameters = {
         borderColor: '#FFAB00',
         color: '#B71C1C',
       },
+      tooltip: {
+        title: 'Open a11y issues',
+        desc: 'This example has some unresolved a11y issues. See the specification on canvas.',
+      }
     },
     MOBILE: {
       styles: {
@@ -30,6 +38,10 @@ export const parameters = {
         borderColor: '#607D8B',
         color: '#263238',
       },
+      tooltip: {
+        title: 'Mobile friendly',
+        desc: 'This example is responsive and accessible to mobile devices.',
+      }
     },
     STABLE: {
       styles: {
@@ -37,6 +49,10 @@ export const parameters = {
         borderColor: '#00C853',
         color: '#1B5E20',
       },
+      tooltip: {
+        title: 'Stable for production use',
+        desc: 'This example is stable enough to be used in a production environment.',
+      }
     },
     W3C: {
       styles: {
@@ -44,6 +60,13 @@ export const parameters = {
         borderColor: '#2962FF',
         color: '#0D47A1',
       },
+      tooltip: {
+        title: 'W3C Guidelines',
+        desc: 'The code in this example is not intended for production environments.',
+        links: [
+          { title: 'Read more', href: 'https://www.w3.org/WAI/', target: 'blank' },
+        ]
+      }
     },
   },
   controls: {
