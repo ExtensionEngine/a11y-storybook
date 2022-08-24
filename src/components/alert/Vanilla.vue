@@ -11,9 +11,6 @@
  *   https://www.w3.org/Consortium/Legal/2015/copyright-software-and-document
  *
  */
-
-// Original source code in CodePen:
-//   https://codepen.io/pen
 const alertHTML = '<p>Hello</p>';
 
 export default {

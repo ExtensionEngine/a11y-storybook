@@ -1,0 +1,186 @@
+<div class="v-application d-block">
+  <div class="v-application--wrap">
+    <h1 class="mb-3 teal--text">Alert and Message Dialogs</h1>
+    <h2 class="mb-3 teal--text">About this pattern</h2>
+    <div class="mb-5">
+      An alert dialog is a <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialogmodal/" target="blank">modal dialog</a> that interrupts the user's workflow to communicate an important message and acquire a response.
+      Examples include action confirmation prompts and error message confirmations.
+      The <a href="https://w3c.github.io/aria/#alertdialog" target="blank">alertdialog</a> role enables assistive technologies and browsers to distinguish alert dialogs from other dialogs so they have the option of giving alert dialogs special treatment, such as playing a system alert sound.
+    </div>
+    <h2 class="mb-3 teal--text">Accessibility Features</h2>
+    <ul>
+      <li class="text-body-1 black--text">The accessible name of the alert dialog is set to its heading ("Confirmation").</li>
+      <li class="text-body-1 black--text">
+        The dialog's prompt ("Are you sure...?") is referenced via <code>aria-describedby</code> to ensure that the user is immediately aware of the prompt.
+      </li>
+      <li class="text-body-1 black--text">
+        Focus is automatically set to the first focusable element inside the dialog, which is the "No" <code>button</code>.
+        This is the least destructive action, so focusing "No" helps prevent users from accidentally confirming the destructive "Discard" action, which cannot be undone.
+      </li>
+      <li class="text-body-1 black--text">
+        When the buttons are disabled, <code>aria-disabled</code> is used instead of the HTML <code>disabled</code> attribute so the buttons will remain in the page <code>Tab</code> sequence. This makes it easier for screen reader users to discover the buttons and discern how the interface works.
+      </li>
+    </ul>
+    <h2 class="mb-3 teal--text">Keyboard Support</h2>
+    <div class="v-data-table theme--light">
+      <div class="v-data-table__wrapper">
+        <table class="mb-5">
+          <thead>
+            <tr className="white">
+              <th className="text-left">Key</th>
+              <th className="text-left">Required</th>
+              <th className="text-left">Function</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="white">
+              <td>
+                <code>Tab</code>
+              </td>
+              <td>Yes</td>
+              <td>
+                <ul>
+                  <li>Moves focus to next focusable element inside the dialog.</li>
+                  <li>When focus is on the last focusable element in the dialog, moves focus to the first focusable element in the dialog.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="white">
+              <td>
+                <code>Shift + Tab</code>
+              </td>
+              <td>Yes</td>
+              <td>
+                <ul>
+                  <li>Moves focus to previous focusable element inside the dialog.</li>
+                  <li>When focus is on the first focusable element in the dialog, moves focus to the last focusable element in the dialog.</li>
+                </ul>
+              </td>
+            </tr>
+            <tr className="white">
+              <td>
+                <code>Escape</code>
+              </td>
+              <td>Yes</td>
+              <td>Closes the dialog.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <h2 class="mb-3 teal--text">Role, Property, State, and Tabindex Attributes</h2>
+    <div>
+      The following implementation notes are based on <a class="blue--text text--darken-2" href="https://www.w3.org/WAI/standards-guidelines/aria/" target="blank">
+        WAI-ARIA Guidelines</a>.
+    </div>
+    <div class="v-data-table theme--light">
+      <div class="v-data-table__wrapper">
+        <table class="mb-5">
+          <thead>
+            <tr className="white">
+              <th className="text-left">Role</th>
+              <th className="text-left">Attribute</th>
+              <th className="text-left">Element</th>
+              <th className="text-left">Usage</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="white">
+              <th className="text-body-2" scope="row">
+                <code>alertdialog</code>
+              </th>
+              <td></td>
+              <td>
+                <code>div</code>
+              </td>
+              <td>Identifies the element that serves as the alert dialog container.</td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-labelledby="ID_REFERENCE"</code>
+              </th>
+              <td>
+                <code>div</code>
+              </td>
+              <td>
+                Gives the alert dialog an accessible name by referring to the element that provides the alert dialog title.
+              </td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-describedby="ID_REFERENCE"</code>
+              </th>
+              <td>
+                <code>div</code>
+              </td>
+              <td>
+                Gives the alert dialog an accessible description by referring to the alert dialog content that describes the primary message or purpose of the alert dialog.
+              </td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-modal="true"</code>
+              </th>
+              <td>
+                <code>div</code>
+              </td>
+              <td>
+                Tells assistive technologies that the windows underneath the current alert dialog are not available for interaction (inert).
+              </td>
+            </tr>
+            <tr className="white">
+              <th className="text-body-2" scope="row">
+                <code>alert</code>
+              </th>
+              <td></td>
+              <td>
+                <code>div</code>
+              </td>
+              <td>Identifies the element that serves as the alert notification.</td>
+            </tr>
+            <tr className="white">
+              <td></td>
+              <th className="text-body-2" scope="row">
+                <code>aria-disabled="true"</code>
+              </th>
+              <td>
+                <code>button</code>
+              </td>
+              <td>Tells assistive technology users the button cannot be activated.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div>
+      Read more about <a class="blue--text text--darken-2" href="https://www.w3.org/WAI/ARIA/apg/patterns/accordion/#wai-aria-roles-states-and-properties" target="blank">
+        WAI-ARIA Roles, States, and Properties</a>.
+    </div>
+    <h3 class="mt-3 teal--text">Notes on aria-modal and aria-hidden</h3>
+    <ul>
+      <li>
+        The <code>aria-modal</code> property was introduced in ARIA 1.1.
+        As a relatively new property, screen reader users may experience varying degrees of support for it.
+      </li>
+      <li>
+        Applying the <code>aria-modal</code> property to the <code>dialog</code> element replaces the technique of using <code>aria-hidden</code>
+        on the background for informing assistive technologies that content outside a dialog is inert.
+      </li>
+      <li>
+        In legacy dialog implementations where <code>aria-hidden</code> is used to make content outside a dialog inert for
+        assistive technology users, it is important that:
+          <ul>
+            <li>
+              <code>aria-hidden</code> is set to <code>true</code> on each element containing a portion of the inert layer.
+            </li>
+            <li>
+              The dialog element is not a descendant of any element that has <code>aria-hidden</code> set to <code>true</code>.
+            </li>
+          </ul>
+      </li>
+    </ul>
+  </div>
+</div>
